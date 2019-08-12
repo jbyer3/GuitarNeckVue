@@ -1,203 +1,277 @@
 <template>
-  <body>
-    <h1>this is my guitar thing</h1>
+<body>
+  <h1>this is my guitar thing</h1>
 
-    <div class="guitar">
-      <div class="string firstString">
-        <div v-for="note in stringSix" v-bind:key="note.id" class="fret">{{note.name}}</div>
-      </div>
-      <div class="string secondString">
-        <div v-for="note in stringFive" v-bind:key="note.id" class="fret">{{note.name}}</div>
-      </div>
-      <div class="string thirdString">
-        <div v-for="note in stringFour" v-bind:key="note.id" class="fret">{{note.name}}</div>
-      </div>
-      <div class="string fourthString">
-        <div v-for="note in stringThree" v-bind:key="note.id" class="fret">{{note.name}}</div>
-      </div>
-      <div class="string fifthString">
-        <div v-for="note in stringTwo" v-bind:key="note.id" class="fret">{{note.name}}</div>
-      </div>
-      <div class="string sixthString">
-        <div v-for="note in stringOne" v-bind:key="note.id" class="fret">{{note.name}}</div>
-      </div>
-      <div class="string fretCount">
-        <div class="fretCounter"></div>
-        <div class="fretCounter">1</div>
-        <div class="fretCounter">2</div>
-        <div class="fretCounter">3</div>
-        <div class="fretCounter">4</div>
-        <div class="fretCounter">5</div>
-        <div class="fretCounter">6</div>
-        <div class="fretCounter">7</div>
-        <div class="fretCounter">8</div>
-        <div class="fretCounter">9</div>
-        <div class="fretCounter">10</div>
-        <div class="fretCounter">11</div>
-        <div class="fretCounter">12</div>
-        <div class="fretCounter">13</div>
-        <div class="fretCounter">14</div>
-        <div class="fretCounter">15</div>
-      </div>
+  <div class="guitar">
+    <!-- <div class="string">
+      <div
+        v-for="note in strings.stringOne"
+        v-bind:key="note.id"
+        v-on:click="highlight(note)"
+        v-bind:class="{selected: note.isHighlighted}"
+        class="fret"
+      >{{note.name}}</div>
     </div>
-  </body>
+    <div class="string">
+      <div
+        v-for="note in strings.stringTwo"
+        v-bind:key="note.id"
+        v-on:click="highlight(note)"
+        v-bind:class="{selected: note.isHighlighted}"
+        class="fret"
+      >{{note.name}}</div>
+    </div>
+    <div class="string">
+      <div
+        v-for="note in strings.stringThree"
+        v-bind:key="note.id"
+        v-on:click="highlight(note)"
+        v-bind:class="{selected: note.isHighlighted}"
+        class="fret"
+      >{{note.name}}</div>
+    </div>
+    <div class="string">
+      <div
+        v-for="note in strings.stringFour"
+        v-bind:key="note.id"
+        v-on:click="highlight(note)"
+        v-bind:class="{selected: note.isHighlighted}"
+        class="fret"
+      >{{note.name}}</div>
+    </div>
+    <div class="string">
+      <div
+        v-for="note in strings.stringFive"
+        v-bind:key="note.id"
+        v-on:click="highlight(note)"
+        v-bind:class="{selected: note.isHighlighted}"
+        class="fret"
+      >{{note.name}}</div>
+    </div>
+    <div class="string">
+      <div
+        v-for="note in strings.stringSix"
+        v-bind:key="note.id"
+        v-on:click="highlight(note)"
+        v-bind:class="{selected: note.isHighlighted}"
+        class="fret"
+      >{{note.name}}</div>
+    </div> -->
+    <div v-for="string in strings" :key="string.stringId" class="string">
+      <div
+        v-for="note in string.notes"
+        v-bind:key="note.id"
+        v-on:click="highlight(note)"
+        v-bind:class="{selected: note.isHighlighted}"
+        class="fret"
+      >{{note.name}}</div> 
+    </div>
+    <div class="string fretCount">
+      <div class="fretCounter"></div>
+      <div class="fretCounter">1</div>
+      <div class="fretCounter">2</div>
+      <div class="fretCounter">3</div>
+      <div class="fretCounter">4</div>
+      <div class="fretCounter">5</div>
+      <div class="fretCounter">6</div>
+      <div class="fretCounter">7</div>
+      <div class="fretCounter">8</div>
+      <div class="fretCounter">9</div>
+      <div class="fretCounter">10</div>
+      <div class="fretCounter">11</div>
+      <div class="fretCounter">12</div>
+      <div class="fretCounter">13</div>
+      <div class="fretCounter">14</div>
+      <div class="fretCounter">15</div>
+    </div>
+  </div>
+</body>
 </template>
 
 <script>
-
 export default {
-  name: 'app',
+  name: "app",
   components: {
     // HelloWorld
   },
-  data () {
+  data() {
     return {
-      stringSix : [
-        {name: "E", isRoot: false, id: 61},
-        {name: "F", isRoot: false, id: 62},
-        {name: "Gb", isRoot: false, id: 63},  
-        {name: "G", isRoot: false, id: 64},
-        {name: "Ab", isRoot: false, id: 65},
-        {name: "A", isRoot: false, id: 66},
-        {name: "Bb", isRoot: false, id: 67},
-        {name: "B", isRoot: false, id: 68},
-        {name: "C", isRoot: false, id: 69},
-        {name: "Db", isRoot: false, id: 610},
-        {name: "D", isRoot: false, id: 611},
-        {name: "Eb", isRoot: false, id: 612},
-        {name: "E", isRoot: false, id: 613},
-        {name: "F", isRoot: false, id: 614},
-        {name: "Gb", isRoot: false, id: 615},
-        {name: "G", isRoot: false, id: 616},
-      ],
-      stringFive : [
-        {name: "A", isRoot: false, id: 51},
-        {name: "Bb", isRoot: false, id: 52},
-        {name: "B", isRoot: false, id: 53},  
-        {name: "C", isRoot: false, id: 54},
-        {name: "Db", isRoot: false, id: 55},
-        {name: "D", isRoot: false, id: 56},
-        {name: "Eb", isRoot: false, id: 57},
-        {name: "E", isRoot: false, id: 58},
-        {name: "F", isRoot: false, id: 59},
-        {name: "Gb", isRoot: false, id: 510},
-        {name: "G", isRoot: false, id: 511},
-        {name: "Ab", isRoot: false, id: 512},
-        {name: "A", isRoot: false, id: 513},
-        {name: "Bb", isRoot: false, id: 514},
-        {name: "B", isRoot: false, id: 515},
-        {name: "C", isRoot: false, id: 516},
-      ],
-      stringFour : [
-        {name: "D", isRoot: false, id: 41},
-        {name: "Eb", isRoot: false, id: 42},
-        {name: "E", isRoot: false, id: 43},  
-        {name: "F", isRoot: false, id: 44},
-        {name: "Gb", isRoot: false, id: 45},
-        {name: "G", isRoot: false, id: 46},
-        {name: "Ab", isRoot: false, id: 47},
-        {name: "A", isRoot: false, id: 48},
-        {name: "Bb", isRoot: false, id: 49},
-        {name: "B", isRoot: false, id: 410},
-        {name: "C", isRoot: false, id: 411},
-        {name: "Db", isRoot: false, id: 412},
-        {name: "D", isRoot: false, id: 413},
-        {name: "Eb", isRoot: false, id: 414},
-        {name: "E", isRoot: false, id: 415},
-        {name: "F", isRoot: false, id: 416},
-      ],
-      stringThree : [
-        {name: "G", isRoot: false, id: 31},
-        {name: "Ab", isRoot: false, id: 32},
-        {name: "A", isRoot: false, id: 33},  
-        {name: "Bb", isRoot: false, id: 34},
-        {name: "B", isRoot: false, id: 35},
-        {name: "C", isRoot: false, id: 36},
-        {name: "Db", isRoot: false, id: 37},
-        {name: "D", isRoot: false, id: 38},
-        {name: "Eb", isRoot: false, id: 39},
-        {name: "E", isRoot: false, id: 310},
-        {name: "F", isRoot: false, id: 311},
-        {name: "Gb", isRoot: false, id: 312},
-        {name: "G", isRoot: false, id: 313},
-        {name: "Ab", isRoot: false, id: 314},
-        {name: "A", isRoot: false, id: 315},
-        {name: "Bb", isRoot: false, id: 316},
-      ],
-      stringTwo : [
-        {name: "B", isRoot: false, id: 21},
-        {name: "C", isRoot: false, id: 22},
-        {name: "Db", isRoot: false, id: 23},  
-        {name: "D", isRoot: false, id: 24},
-        {name: "Eb", isRoot: false, id: 25},
-        {name: "E", isRoot: false, id: 26},
-        {name: "F", isRoot: false, id: 27},
-        {name: "Gb", isRoot: false, id: 28},
-        {name: "G", isRoot: false, id: 29},
-        {name: "Ab", isRoot: false, id: 210},
-        {name: "A", isRoot: false, id: 211},
-        {name: "Bb", isRoot: false, id: 212},
-        {name: "B", isRoot: false, id: 213},
-        {name: "C", isRoot: false, id: 214},
-        {name: "Db", isRoot: false, id: 215},
-        {name: "D", isRoot: false, id: 216},
-      ],
-      stringOne : [
-        {name: "E", isRoot: false, id: 11},
-        {name: "F", isRoot: false, id: 12},
-        {name: "Gb", isRoot: false, id: 13},  
-        {name: "G", isRoot: false, id: 14},
-        {name: "Ab", isRoot: false, id: 15},
-        {name: "A", isRoot: false, id: 16},
-        {name: "Bb", isRoot: false, id: 17},
-        {name: "B", isRoot: false, id: 18},
-        {name: "C", isRoot: false, id: 19},
-        {name: "Db", isRoot: false, id: 110},
-        {name: "D", isRoot: false, id: 111},
-        {name: "Eb", isRoot: false, id: 112},
-        {name: "E", isRoot: false, id: 113},
-        {name: "F", isRoot: false, id: 114},
-        {name: "Gb", isRoot: false, id: 115},
-        {name: "G", isRoot: false, id: 116},
-      ],
-    }
+      strings: [
+        {
+          stringName: "stringSix",
+          stringId: 6,
+          notes: [
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 61 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 62 },
+            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 63 },
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 64 },
+            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 65 },
+            { name: "A", isRoot: 0, isHighlighted: 0, id: 66 },
+            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 67 },
+            { name: "B", isRoot: 0, isHighlighted: 0, id: 68 },
+            { name: "C", isRoot: 0, isHighlighted: 0, id: 69 },
+            { name: "Db", isRoot: 0, isHighlighted: 0, id: 610 },
+            { name: "D", isRoot: 0, isHighlighted: 0, id: 611 },
+            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 612 },
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 613 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 614 },
+            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 615 },
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 616 }
+          ]
+        },
+        {
+          stringName: "stringFive",
+          stringId: 5,
+          notes: [
+            { name: "A", isRoot: 0, isHighlighted: 0, id: 51 },
+            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 52 },
+            { name: "B", isRoot: 0, isHighlighted: 0, id: 53 },
+            { name: "C", isRoot: 0, isHighlighted: 0, id: 54 },
+            { name: "Db", isRoot: 0, isHighlighted: 0, id: 55 },
+            { name: "D", isRoot: 0, isHighlighted: 0, id: 56 },
+            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 57 },
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 58 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 59 },
+            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 510 },
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 511 },
+            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 512 },
+            { name: "A", isRoot: 0, isHighlighted: 0, id: 513 },
+            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 514 },
+            { name: "B", isRoot: 0, isHighlighted: 0, id: 515 },
+            { name: "C", isRoot: 0, isHighlighted: 0, id: 516 }
+          ]
+        },
+        {
+          stringName: "stringFour",
+          stringId: 4,
+          notes: [
+            { name: "D", isRoot: 0, isHighlighted: 0, id: 41 },
+            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 42 },
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 43 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 44 },
+            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 45 },
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 46 },
+            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 47 },
+            { name: "A", isRoot: 0, isHighlighted: 0, id: 48 },
+            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 49 },
+            { name: "B", isRoot: 0, isHighlighted: 0, id: 410 },
+            { name: "C", isRoot: 0, isHighlighted: 0, id: 411 },
+            { name: "Db", isRoot: 0, isHighlighted: 0, id: 412 },
+            { name: "D", isRoot: 0, isHighlighted: 0, id: 413 },
+            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 414 },
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 415 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 416 }
+          ]
+        },
+        {
+          stringName: "stringThree",
+          stringId: 3,
+          notes: [
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 31 },
+            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 32 },
+            { name: "A", isRoot: 0, isHighlighted: 0, id: 33 },
+            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 34 },
+            { name: "B", isRoot: 0, isHighlighted: 0, id: 35 },
+            { name: "C", isRoot: 0, isHighlighted: 0, id: 36 },
+            { name: "Db", isRoot: 0, isHighlighted: 0, id: 37 },
+            { name: "D", isRoot: 0, isHighlighted: 0, id: 38 },
+            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 39 },
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 310 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 311 },
+            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 312 },
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 313 },
+            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 314 },
+            { name: "A", isRoot: 0, isHighlighted: 0, id: 315 },
+            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 316 }
+          ]
+        },
+        {
+          stringName: "stringTwo",
+          stringId: 2,
+          notes: [
+            { name: "B", isRoot: 0, isHighlighted: 0, id: 21 },
+            { name: "C", isRoot: 0, isHighlighted: 0, id: 22 },
+            { name: "Db", isRoot: 0, isHighlighted: 0, id: 23 },
+            { name: "D", isRoot: 0, isHighlighted: 0, id: 24 },
+            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 25 },
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 26 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 27 },
+            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 28 },
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 29 },
+            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 210 },
+            { name: "A", isRoot: 0, isHighlighted: 0, id: 211 },
+            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 212 },
+            { name: "B", isRoot: 0, isHighlighted: 0, id: 213 },
+            { name: "C", isRoot: 0, isHighlighted: 0, id: 214 },
+            { name: "Db", isRoot: 0, isHighlighted: 0, id: 215 },
+            { name: "D", isRoot: 0, isHighlighted: 0, id: 216 }
+          ]
+        },
+        {
+          stringName: "stringOne",
+          stringId: 1,
+          notes: [
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 11 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 12 },
+            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 13 },
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 14 },
+            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 15 },
+            { name: "A", isRoot: 0, isHighlighted: 0, id: 16 },
+            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 17 },
+            { name: "B", isRoot: 0, isHighlighted: 0, id: 18 },
+            { name: "C", isRoot: 0, isHighlighted: 0, id: 19 },
+            { name: "Db", isRoot: 0, isHighlighted: 0, id: 110 },
+            { name: "D", isRoot: 0, isHighlighted: 0, id: 111 },
+            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 112 },
+            { name: "E", isRoot: 0, isHighlighted: 0, id: 113 },
+            { name: "F", isRoot: 0, isHighlighted: 0, id: 114 },
+            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 115 },
+            { name: "G", isRoot: 0, isHighlighted: 0, id: 116 }
+          ]
+        }
+      ]
+    };
   },
   methods: {
-
-  },
-  computed: {
-
-  }
-}
-
-const frets = document.getElementsByClassName('fret');
-const fretArray = Array.from(frets);
-const selectedNotes = new Set;
-
-fretArray.forEach(fret => {
-  fret.addEventListener('click', highlight);
-});
-
-function highlight() {
-  fretArray.forEach(fret => {
-    if(fret.dataset.notevalue === this.dataset.notevalue){
-      if(!fret.classList.contains('selected')){
-        fret.classList.add('selected');
-        selectedNotes.add(this.dataset.notevalue);
+    highlight: function(note) {
+      if (note.isHighlighted == 0 || undefined) {
+        note.isHighlighted = true;
       } else {
-        fret.classList.remove('selected');
-        selectedNotes.delete(this.dataset.notevalue);
+        note.isHighlighted = false;
       }
     }
-  });
-}
+  },
+  computed: {}
+};
 
-console.log(frets)
+// const frets = document.getElementsByClassName('fret');
+// const fretArray = Array.from(frets);
+// const selectedNotes = new Set;
+
+// fretArray.forEach(fret => {
+//   fret.addEventListener('click', highlight);
+// });
+
+// function highlight() {
+//   fretArray.forEach(fret => {
+//     if(fret.dataset.notevalue === this.dataset.notevalue){
+//       if(!fret.classList.contains('selected')){
+//         fret.classList.add('selected');
+//         selectedNotes.add(this.dataset.notevalue);
+//       } else {
+//         fret.classList.remove('selected');
+//         selectedNotes.delete(this.dataset.notevalue);
+//       }
+//     }
+//   });
+// }
+
+// console.log(frets)
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -217,7 +291,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-};
+}
 
 h1 {
   display: inline-block;
@@ -229,7 +303,7 @@ h1 {
   flex: 1;
   align-items: center;
   justify-content: center;
-  background:rgb(214, 242, 131);
+  background: rgb(214, 242, 131);
   width: 30px;
 }
 
