@@ -196,7 +196,6 @@ export default {
       })
     },
     highlight: function(note) {
-      // chord = new Set;
       console.log(note)
       if (note.isHighlighted == 0 || undefined) {
         note.isHighlighted = true;
@@ -210,30 +209,6 @@ export default {
   },
   computed: {}
 };
-
-// const frets = document.getElementsByClassName('fret');
-// const fretArray = Array.from(frets);
-// const selectedNotes = new Set;
-
-// fretArray.forEach(fret => {
-//   fret.addEventListener('click', highlight);
-// });
-
-// function highlight() {
-//   fretArray.forEach(fret => {
-//     if(fret.dataset.notevalue === this.dataset.notevalue){
-//       if(!fret.classList.contains('selected')){
-//         fret.classList.add('selected');
-//         selectedNotes.add(this.dataset.notevalue);
-//       } else {
-//         fret.classList.remove('selected');
-//         selectedNotes.delete(this.dataset.notevalue);
-//       }
-//     }
-//   });
-// }
-
-// console.log(frets)
 </script>
 
 <style>
