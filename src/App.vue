@@ -3,66 +3,16 @@
   <h1>this is my guitar thing</h1>
 
   <div class="guitar">
-    <!-- <div class="string">
-      <div
-        v-for="note in strings.stringOne"
-        v-bind:key="note.id"
-        v-on:click="highlight(note)"
-        v-bind:class="{selected: note.isHighlighted}"
-        class="fret"
-      >{{note.name}}</div>
-    </div>
-    <div class="string">
-      <div
-        v-for="note in strings.stringTwo"
-        v-bind:key="note.id"
-        v-on:click="highlight(note)"
-        v-bind:class="{selected: note.isHighlighted}"
-        class="fret"
-      >{{note.name}}</div>
-    </div>
-    <div class="string">
-      <div
-        v-for="note in strings.stringThree"
-        v-bind:key="note.id"
-        v-on:click="highlight(note)"
-        v-bind:class="{selected: note.isHighlighted}"
-        class="fret"
-      >{{note.name}}</div>
-    </div>
-    <div class="string">
-      <div
-        v-for="note in strings.stringFour"
-        v-bind:key="note.id"
-        v-on:click="highlight(note)"
-        v-bind:class="{selected: note.isHighlighted}"
-        class="fret"
-      >{{note.name}}</div>
-    </div>
-    <div class="string">
-      <div
-        v-for="note in strings.stringFive"
-        v-bind:key="note.id"
-        v-on:click="highlight(note)"
-        v-bind:class="{selected: note.isHighlighted}"
-        class="fret"
-      >{{note.name}}</div>
-    </div>
-    <div class="string">
-      <div
-        v-for="note in strings.stringSix"
-        v-bind:key="note.id"
-        v-on:click="highlight(note)"
-        v-bind:class="{selected: note.isHighlighted}"
-        class="fret"
-      >{{note.name}}</div>
-    </div> -->
-    <div v-for="string in strings" :key="string.stringId" class="string">
+    <div 
+      v-for="string in strings" 
+      :key="string.stringId"
+      @click="check(string)"
+      class="string">
       <div
         v-for="note in string.notes"
-        v-bind:key="note.id"
-        v-on:click="highlight(note)"
-        v-bind:class="{selected: note.isHighlighted}"
+        :key="note.id"
+        @click="highlight(note)"
+        :class="{selected: note.isHighlighted}"
         class="fret"
       >{{note.name}}</div> 
     </div>
@@ -233,7 +183,11 @@ export default {
     };
   },
   methods: {
+    check: function(string){
+      console.log(string.notes)
+    },
     highlight: function(note) {
+      console.log(note)
       if (note.isHighlighted == 0 || undefined) {
         note.isHighlighted = true;
       } else {
