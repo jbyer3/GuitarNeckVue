@@ -6,7 +6,7 @@
     <div 
       v-for="string in strings" 
       :key="string.stringId"
-      @click="check(string)"
+      @click="check(strings)"
       class="string">
       <div
         v-for="note in string.notes"
@@ -46,6 +46,7 @@ export default {
   },
   data() {
     return {
+      chord: new Set,
       strings: [
         {
           stringName: "stringSix",
@@ -179,20 +180,32 @@ export default {
             { name: "G", isRoot: 0, isHighlighted: 0, id: 116 }
           ]
         }
-      ]
+      ],
     };
   },
   methods: {
-    check: function(string){
-      console.log(string.notes)
+    check: function(strings){
+      strings.forEach(string => {
+        string.notes.forEach(note => {
+            if(this.chord.has(note.name)){
+              note.isHighlighted = true;
+            } else {
+              note.isHighlighted = false;
+            }
+          })
+      })
     },
     highlight: function(note) {
+      // chord = new Set;
       console.log(note)
       if (note.isHighlighted == 0 || undefined) {
         note.isHighlighted = true;
+        this.chord.add(note.name);
       } else {
         note.isHighlighted = false;
+        this.chord.delete(note.name);
       }
+      console.log(this.chord)
     }
   },
   computed: {}
