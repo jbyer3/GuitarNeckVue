@@ -236,6 +236,7 @@ export default {
     };
   },
   methods: {
+    // hilite works with dropdown boxes 
     hilite: function(finalChord) {
       const notes = [...finalChord];
       this.strings.forEach(string => {
