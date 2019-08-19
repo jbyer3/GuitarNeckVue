@@ -3,18 +3,14 @@
   <h1>this is my guitar thing</h1>
 
   <div class="guitar">
-    <div 
-      v-for="string in strings" 
-      :key="string.stringId"
-      @click="check(strings)"
-      class="string">
+    <div v-for="string in strings" :key="string.stringId" @click="check(strings)" class="string">
       <div
         v-for="note in string.notes"
         :key="note.id"
         @click="highlight(note)"
         :class="{selected: note.isHighlighted}"
         class="fret"
-      >{{note.name}}</div> 
+      >{{note.name}}</div>
     </div>
     <div class="string fretCount">
       <div class="fretCounter"></div>
@@ -35,10 +31,13 @@
       <div class="fretCounter">15</div>
     </div>
   </div>
+  <h2>{{outputNotes()}}</h2>
 </body>
 </template>
 
 <script>
+import { Array, Note, Interval, Distance, Dictionary, Chord, Scale } from "tonal";
+
 export default {
   name: "app",
   components: {
@@ -46,7 +45,7 @@ export default {
   },
   data() {
     return {
-      chord: new Set,
+      chord: new Set(),
       strings: [
         {
           stringName: "stringOne",
@@ -179,24 +178,25 @@ export default {
             { name: "Gb", isRoot: 0, isHighlighted: 0, id: 615 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 616 }
           ]
-        },
-      ],
+        }
+      ]
     };
   },
   methods: {
-    check: function(strings){
+    check: function(strings) {
       strings.forEach(string => {
         string.notes.forEach(note => {
-            if(this.chord.has(note.name)){
-              note.isHighlighted = true;
-            } else {
-              note.isHighlighted = false;
-            }
-          })
-      })
+          if (this.chord.has(note.name)) {
+            note.isHighlighted = true;
+          } else {
+            note.isHighlighted = false;
+          }
+        });
+      });
+      this.outputNotes();
     },
     highlight: function(note) {
-      console.log(note)
+      console.log(note.name);
       if (note.isHighlighted == 0 || undefined) {
         note.isHighlighted = true;
         this.chord.add(note.name);
@@ -204,10 +204,26 @@ export default {
         note.isHighlighted = false;
         this.chord.delete(note.name);
       }
-      console.log(this.chord)
+    },
+    outputNotes: function() {
+      // console.log(this.chord)
+      const currentChord = [...this.chord];
+      console.log(`current chord is ${currentChord}`)
+      if(currentChord.length === 0){
+        return "empty!"
+      } else if (currentChord.length === 1){
+        return `one note! ${currentChord[0]}`
+      } else if (currentChord.length === 2){
+        console.log(Distance.interval(currentChord[0], currentChord[1]))
+        return `two notes! ${currentChord[0]} and ${currentChord[1]}`
+      } else if (currentChord.length >= 3){
+        return `Chord!!! `
+      }
     }
   },
-  computed: {}
+  computed: {
+    
+  }
 };
 </script>
 
