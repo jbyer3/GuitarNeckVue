@@ -34,27 +34,39 @@
   <h2>{{outputNotes()}}</h2>
   <div class="chord-inputs">
     <select v-model="selected1">
-      <option v-for="note in circleOfFifths" :value="note.value" :key="note.id">
-        {{note.text}}
-      </option>
+      <option
+        v-for="note in circleOfFifths"
+        :value="note.value"
+        :key="note.id"
+        @click="hilite(finalChord)"
+      >{{note.text}}</option>
     </select>
     <select v-model="selected2">
-      <option v-for="chord in chordOptions" :value="chord.value" :key="chord.id">
-        {{chord.text}}
-      </option>
+      <option
+        v-for="chord in chordOptions"
+        :value="chord.value"
+        :key="chord.id"
+        @click="hilite(finalChord)"
+      >{{chord.text}}</option>
     </select>
   </div>
   <span>Selected notes: {{ finalChord }}</span>
 
-  <button @click="hilite(finalChord)">log notes</button>
-
-  
+  <button>log notes</button>
 </body>
 </template>
 
 <script>
 // eslint-disable-next-line
-import { Array, Note, Interval, Distance, Dictionary, Chord, Scale } from "tonal";
+import {
+  Array,
+  Note,
+  Interval,
+  Distance,
+  Dictionary,
+  Chord,
+  Scale
+} from "tonal";
 
 export default {
   name: "app",
@@ -71,19 +83,19 @@ export default {
           notes: [
             { name: "E", isRoot: 0, isHighlighted: 0, id: 11 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 12 },
-            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 13 },
+            { name: "Gb", altName: "F#", isRoot: 0, isHighlighted: 0, id: 13 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 14 },
-            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 15 },
+            { name: "Ab", altName: "G#", isRoot: 0, isHighlighted: 0, id: 15 },
             { name: "A", isRoot: 0, isHighlighted: 0, id: 16 },
-            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 17 },
+            { name: "Bb", altName: "A#", isRoot: 0, isHighlighted: 0, id: 17 },
             { name: "B", isRoot: 0, isHighlighted: 0, id: 18 },
             { name: "C", isRoot: 0, isHighlighted: 0, id: 19 },
-            { name: "Db", isRoot: 0, isHighlighted: 0, id: 110 },
+            { name: "Db", altName: "C#", isRoot: 0, isHighlighted: 0, id: 110 },
             { name: "D", isRoot: 0, isHighlighted: 0, id: 111 },
-            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 112 },
+            { name: "Eb", altName: "D#", isRoot: 0, isHighlighted: 0, id: 112 },
             { name: "E", isRoot: 0, isHighlighted: 0, id: 113 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 114 },
-            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 115 },
+            { name: "Gb", altName: "G#", isRoot: 0, isHighlighted: 0, id: 115 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 116 }
           ]
         },
@@ -93,19 +105,19 @@ export default {
           notes: [
             { name: "B", isRoot: 0, isHighlighted: 0, id: 21 },
             { name: "C", isRoot: 0, isHighlighted: 0, id: 22 },
-            { name: "Db", isRoot: 0, isHighlighted: 0, id: 23 },
+            { name: "Db", altName: "C#", isRoot: 0, isHighlighted: 0, id: 23 },
             { name: "D", isRoot: 0, isHighlighted: 0, id: 24 },
-            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 25 },
+            { name: "Eb", altName: "D#", isRoot: 0, isHighlighted: 0, id: 25 },
             { name: "E", isRoot: 0, isHighlighted: 0, id: 26 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 27 },
-            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 28 },
+            { name: "Gb", altName: "F#", isRoot: 0, isHighlighted: 0, id: 28 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 29 },
-            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 210 },
+            { name: "Ab", altName: "G#", isRoot: 0, isHighlighted: 0, id: 210 },
             { name: "A", isRoot: 0, isHighlighted: 0, id: 211 },
-            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 212 },
+            { name: "Bb", altName: "A#", isRoot: 0, isHighlighted: 0, id: 212 },
             { name: "B", isRoot: 0, isHighlighted: 0, id: 213 },
             { name: "C", isRoot: 0, isHighlighted: 0, id: 214 },
-            { name: "Db", isRoot: 0, isHighlighted: 0, id: 215 },
+            { name: "Db", altName: "C#", isRoot: 0, isHighlighted: 0, id: 215 },
             { name: "D", isRoot: 0, isHighlighted: 0, id: 216 }
           ]
         },
@@ -114,21 +126,21 @@ export default {
           stringId: 3,
           notes: [
             { name: "G", isRoot: 0, isHighlighted: 0, id: 31 },
-            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 32 },
+            { name: "Ab", altName: "G#", isRoot: 0, isHighlighted: 0, id: 32 },
             { name: "A", isRoot: 0, isHighlighted: 0, id: 33 },
-            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 34 },
+            { name: "Bb", altName: "A#", isRoot: 0, isHighlighted: 0, id: 34 },
             { name: "B", isRoot: 0, isHighlighted: 0, id: 35 },
             { name: "C", isRoot: 0, isHighlighted: 0, id: 36 },
-            { name: "Db", isRoot: 0, isHighlighted: 0, id: 37 },
+            { name: "Db", altName: "C#",isRoot: 0, isHighlighted: 0, id: 37 },
             { name: "D", isRoot: 0, isHighlighted: 0, id: 38 },
-            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 39 },
+            { name: "Eb", altName: "D#", isRoot: 0, isHighlighted: 0, id: 39 },
             { name: "E", isRoot: 0, isHighlighted: 0, id: 310 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 311 },
-            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 312 },
+            { name: "Gb", altName: "F#", isRoot: 0, isHighlighted: 0, id: 312 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 313 },
-            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 314 },
+            { name: "Ab", altName: "G#", isRoot: 0, isHighlighted: 0, id: 314 },
             { name: "A", isRoot: 0, isHighlighted: 0, id: 315 },
-            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 316 }
+            { name: "Bb", altName: "A#", isRoot: 0, isHighlighted: 0, id: 316 }
           ]
         },
         {
@@ -136,19 +148,19 @@ export default {
           stringId: 4,
           notes: [
             { name: "D", isRoot: 0, isHighlighted: 0, id: 41 },
-            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 42 },
+            { name: "Eb", altName: "D#", isRoot: 0, isHighlighted: 0, id: 42 },
             { name: "E", isRoot: 0, isHighlighted: 0, id: 43 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 44 },
-            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 45 },
+            { name: "Gb", altName: "F#", isRoot: 0, isHighlighted: 0, id: 45 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 46 },
-            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 47 },
+            { name: "Ab", altName: "G#", isRoot: 0, isHighlighted: 0, id: 47 },
             { name: "A", isRoot: 0, isHighlighted: 0, id: 48 },
-            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 49 },
+            { name: "Bb", altName: "A#", isRoot: 0, isHighlighted: 0, id: 49 },
             { name: "B", isRoot: 0, isHighlighted: 0, id: 410 },
             { name: "C", isRoot: 0, isHighlighted: 0, id: 411 },
-            { name: "Db", isRoot: 0, isHighlighted: 0, id: 412 },
+            { name: "Db", altName: "C#", isRoot: 0, isHighlighted: 0, id: 412 },
             { name: "D", isRoot: 0, isHighlighted: 0, id: 413 },
-            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 414 },
+            { name: "Eb", altName: "D#", isRoot: 0, isHighlighted: 0, id: 414 },
             { name: "E", isRoot: 0, isHighlighted: 0, id: 415 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 416 }
           ]
@@ -158,19 +170,19 @@ export default {
           stringId: 5,
           notes: [
             { name: "A", isRoot: 0, isHighlighted: 0, id: 51 },
-            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 52 },
+            { name: "Bb", altName: "A#", isRoot: 0, isHighlighted: 0, id: 52 },
             { name: "B", isRoot: 0, isHighlighted: 0, id: 53 },
             { name: "C", isRoot: 0, isHighlighted: 0, id: 54 },
-            { name: "Db", isRoot: 0, isHighlighted: 0, id: 55 },
+            { name: "Db", altName: "C#", isRoot: 0, isHighlighted: 0, id: 55 },
             { name: "D", isRoot: 0, isHighlighted: 0, id: 56 },
-            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 57 },
+            { name: "Eb", altName: "D#", isRoot: 0, isHighlighted: 0, id: 57 },
             { name: "E", isRoot: 0, isHighlighted: 0, id: 58 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 59 },
-            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 510 },
+            { name: "Gb", altName: "F#", isRoot: 0, isHighlighted: 0, id: 510 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 511 },
-            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 512 },
+            { name: "Ab", altName: "G#", isRoot: 0, isHighlighted: 0, id: 512 },
             { name: "A", isRoot: 0, isHighlighted: 0, id: 513 },
-            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 514 },
+            { name: "Bb", altName: "A#", isRoot: 0, isHighlighted: 0, id: 514 },
             { name: "B", isRoot: 0, isHighlighted: 0, id: 515 },
             { name: "C", isRoot: 0, isHighlighted: 0, id: 516 }
           ]
@@ -181,52 +193,68 @@ export default {
           notes: [
             { name: "E", isRoot: 0, isHighlighted: 0, id: 61 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 62 },
-            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 63 },
+            { name: "Gb", altName: "F#", isRoot: 0, isHighlighted: 0, id: 63 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 64 },
-            { name: "Ab", isRoot: 0, isHighlighted: 0, id: 65 },
+            { name: "Ab", altName: "G#", isRoot: 0, isHighlighted: 0, id: 65 },
             { name: "A", isRoot: 0, isHighlighted: 0, id: 66 },
-            { name: "Bb", isRoot: 0, isHighlighted: 0, id: 67 },
+            { name: "Bb", altName: "A#", isRoot: 0, isHighlighted: 0, id: 67 },
             { name: "B", isRoot: 0, isHighlighted: 0, id: 68 },
             { name: "C", isRoot: 0, isHighlighted: 0, id: 69 },
-            { name: "Db", isRoot: 0, isHighlighted: 0, id: 610 },
+            { name: "Db", altName: "C#", isRoot: 0, isHighlighted: 0, id: 610 },
             { name: "D", isRoot: 0, isHighlighted: 0, id: 611 },
-            { name: "Eb", isRoot: 0, isHighlighted: 0, id: 612 },
+            { name: "Eb", altName: "D#", isRoot: 0, isHighlighted: 0, id: 612 },
             { name: "E", isRoot: 0, isHighlighted: 0, id: 613 },
             { name: "F", isRoot: 0, isHighlighted: 0, id: 614 },
-            { name: "Gb", isRoot: 0, isHighlighted: 0, id: 615 },
+            { name: "Gb", altName: "F#", isRoot: 0, isHighlighted: 0, id: 615 },
             { name: "G", isRoot: 0, isHighlighted: 0, id: 616 }
           ]
         }
       ],
-      selected1: '',
-      selected2: '', 
+      selected1: "",
+      selected2: "",
       circleOfFifths: [
-        {text: 'C' , value: 'C', id: 1}, 
-        {text: 'G', value: 'G', id: 2}, 
-        {text: 'D', value: 'D', id: 3},
-        {text: 'A', value: 'A', id: 4}, 
-        {text: 'E', value: 'E', id: 5}, 
-        {text: 'B', value: 'B', id: 6}, 
-        {text: 'Gb/F#', value: 'Gb', id: 7}, 
-        {text: 'Db/C#', value: 'Db', id: 8}, 
-        {text: 'Ab/G#', value: 'Ab', id: 9}, 
-        {text: 'Eb/D#', value: 'Eb', id: 10}, 
-        {text: 'Bb/A#', value: 'Bb', id: 11}, 
-        {text: 'F', value: 'F', id: 12},
+        { text: "C", value: "C", id: 1 },
+        { text: "G", value: "G", id: 2 },
+        { text: "D", value: "D", id: 3 },
+        { text: "A", value: "A", id: 4 },
+        { text: "E", value: "E", id: 5 },
+        { text: "B", value: "B", id: 6 },
+        { text: "Gb/F#", value: "Gb", id: 7 },
+        { text: "Db/C#", value: "Db", id: 8 },
+        { text: "Ab/G#", value: "Ab", id: 9 },
+        { text: "Eb/D#", value: "Eb", id: 10 },
+        { text: "Bb/A#", value: "Bb", id: 11 },
+        { text: "F", value: "F", id: 12 }
       ],
-    chordOptions: [
-      {text: 'Maj', value: '', id: 1},
-      {text: 'Min', value: 'm', id: 2},
-      {text: 'Maj7', value: 'Maj7', id: 3},
-      {text: 'Min7', value: 'm7', id: 4},
-      {text: '7', value: '7', id: 5}
-    ]
+      chordOptions: [
+        { text: "Maj", value: "", id: 1 },
+        { text: "Min", value: "m", id: 2 },
+        { text: "Maj7", value: "Maj7", id: 3 },
+        { text: "Min7", value: "m7", id: 4 },
+        { text: "7", value: "7", id: 5 }
+      ]
     };
   },
   methods: {
-    hilite: function(args){
-      console.log(args)
+    hilite: function(finalChord) {
+      const notes = [...finalChord];
+      this.strings.forEach(string => {
+        string.notes.forEach(note => {
+          if(notes.includes(note.name) || notes.includes(note.altName)) {
+            note.isHighlighted = 1;
+          } else {
+            note.isHighlighted = 0;
+          }
+          if(notes[0] === note.name || notes[0] === note.altName) {
+            note.isRoot = 1;
+          } else {
+            note.isRoot = 0;
+          }
+        })
+      })
     },
+
+    // check runs the highlight function on a loop over all strings to check for other notes, again, only on clicks
     check: function(strings) {
       strings.forEach(string => {
         string.notes.forEach(note => {
@@ -239,6 +267,7 @@ export default {
       });
       this.outputNotes();
     },
+    // highlight only takes a click event from the strings
     highlight: function(note) {
       console.log(note.name);
       if (note.isHighlighted == 0 || undefined) {
@@ -249,28 +278,30 @@ export default {
         this.chord.delete(note.name);
       }
     },
+
+    // silliness to put clicked chords on the screen
     outputNotes: function() {
       // console.log(this.chord)
       const currentChord = [...this.chord];
       // console.log(`current chord is ${currentChord}`)
-      if(currentChord.length === 0){
-        return "empty!"
-      } else if (currentChord.length === 1){
-        return `one note! ${currentChord[0]}`
-      } else if (currentChord.length === 2){
-        console.log(Distance.interval(currentChord[0], currentChord[1]))
-        return `two notes! ${currentChord[0]} and ${currentChord[1]}`
-      } else if (currentChord.length >= 3){
-        return `Chord!!! `
+      if (currentChord.length === 0) {
+        return "empty!";
+      } else if (currentChord.length === 1) {
+        return `one note! ${currentChord[0]}`;
+      } else if (currentChord.length === 2) {
+        console.log(Distance.interval(currentChord[0], currentChord[1]));
+        return `two notes! ${currentChord[0]} and ${currentChord[1]}`;
+      } else if (currentChord.length >= 3) {
+        return `Chord!!! `;
       }
     }
   },
   computed: {
     finalChord: function() {
       const chord = `${this.selected1}${this.selected2}`;
-      console.log(`chord is ${Chord.notes(chord)}`)
-      return chord ? Chord.notes(chord) : '';
-    },
+      console.log(`chord is ${Chord.notes(chord)}`);
+      return chord ? Chord.notes(chord) : "";
+    }
   }
 };
 </script>
