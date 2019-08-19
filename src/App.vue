@@ -32,6 +32,21 @@
     </div>
   </div>
   <h2>{{outputNotes()}}</h2>
+  <div class="chord-inputs">
+    <select v-model="selected1">
+      <option v-for="note in circleOfFifths" :value="note.value" :key="note.id">
+        {{note.text}}
+      </option>
+    </select>
+    <select v-model="selected2">
+      <option v-for="chord in chordOptions" :value="chord.value" :key="chord.id">
+        {{chord.text}}
+      </option>
+    </select>
+  </div>
+  <span>Selected notes: {{ finalChord }}</span>
+
+  
 </body>
 </template>
 
@@ -179,7 +194,30 @@ export default {
             { name: "G", isRoot: 0, isHighlighted: 0, id: 616 }
           ]
         }
-      ]
+      ],
+      selected1: '',
+      selected2: '', 
+      circleOfFifths: [
+        {text: 'C' , value: 'C', id: 1}, 
+        {text: 'G', value: 'G', id: 2}, 
+        {text: 'D', value: 'D', id: 3},
+        {text: 'A', value: 'A', id: 4}, 
+        {text: 'E', value: 'E', id: 5}, 
+        {text: 'B', value: 'B', id: 6}, 
+        {text: 'Gb/F#', value: 'Gb', id: 7}, 
+        {text: 'Db/C#', value: 'Db', id: 8}, 
+        {text: 'Ab/G#', value: 'Ab', id: 9}, 
+        {text: 'Eb/D#', value: 'Eb', id: 10}, 
+        {text: 'Bb/A#', value: 'Bb', id: 11}, 
+        {text: 'F', value: 'F', id: 12},
+      ],
+    chordOptions: [
+      {text: 'Maj', value: 'Maj', id: 1},
+      {text: 'Min', value: 'Min', id: 2},
+      {text: 'Maj7', value: 'Maj7', id: 3},
+      {text: 'Min7', value: 'Min7', id: 4},
+      {text: '7', value: '7', id: 5}
+    ]
     };
   },
   methods: {
@@ -222,7 +260,13 @@ export default {
     }
   },
   computed: {
-    
+    finalChord: function() {
+      const chord = `${this.selected1}${this.selected2}`
+      console.log(Chord.notes(chord));
+      // chord.forEach(note => highlight(note))
+      return chord ? Chord.notes(chord): '';
+      
+    },
   }
 };
 </script>
