@@ -46,11 +46,14 @@
   </div>
   <span>Selected notes: {{ finalChord }}</span>
 
+  <button @click="hilite(finalChord)">log notes</button>
+
   
 </body>
 </template>
 
 <script>
+// eslint-disable-next-line
 import { Array, Note, Interval, Distance, Dictionary, Chord, Scale } from "tonal";
 
 export default {
@@ -212,15 +215,18 @@ export default {
         {text: 'F', value: 'F', id: 12},
       ],
     chordOptions: [
-      {text: 'Maj', value: 'Maj', id: 1},
-      {text: 'Min', value: 'Min', id: 2},
+      {text: 'Maj', value: '', id: 1},
+      {text: 'Min', value: 'm', id: 2},
       {text: 'Maj7', value: 'Maj7', id: 3},
-      {text: 'Min7', value: 'Min7', id: 4},
+      {text: 'Min7', value: 'm7', id: 4},
       {text: '7', value: '7', id: 5}
     ]
     };
   },
   methods: {
+    hilite: function(args){
+      console.log(args)
+    },
     check: function(strings) {
       strings.forEach(string => {
         string.notes.forEach(note => {
@@ -246,7 +252,7 @@ export default {
     outputNotes: function() {
       // console.log(this.chord)
       const currentChord = [...this.chord];
-      console.log(`current chord is ${currentChord}`)
+      // console.log(`current chord is ${currentChord}`)
       if(currentChord.length === 0){
         return "empty!"
       } else if (currentChord.length === 1){
@@ -261,11 +267,9 @@ export default {
   },
   computed: {
     finalChord: function() {
-      const chord = `${this.selected1}${this.selected2}`
-      console.log(Chord.notes(chord));
-      // chord.forEach(note => highlight(note))
-      return chord ? Chord.notes(chord): '';
-      
+      const chord = `${this.selected1}${this.selected2}`;
+      console.log(`chord is ${Chord.notes(chord)}`)
+      return chord ? Chord.notes(chord) : '';
     },
   }
 };
