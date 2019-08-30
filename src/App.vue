@@ -8,7 +8,7 @@
         v-for="note in string.notes"
         :key="note.id"
         @click="highlight(note)"
-        :class="{selected: note.isHighlighted}"
+        :class="{selected: note.isHighlighted, rootNote: note.isRoot}"
         class="fret"
       >{{note.name}}</div>
     </div>
@@ -57,15 +57,14 @@
 </template>
 
 <script>
-// eslint-disable-next-line
 import {
-  Array,
-  Note,
-  Interval,
+  // Array,
+  // Note,
+  // Interval,
   Distance,
-  Dictionary,
+  // Dictionary,
   Chord,
-  Scale
+  // Scale
 } from "tonal";
 
 export default {
@@ -377,5 +376,9 @@ h1 {
 
 .selected {
   background: red;
+}
+
+.rootNote {
+  background: violet;
 }
 </style>
