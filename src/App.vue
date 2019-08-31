@@ -101,6 +101,7 @@ export default {
               altName: "F#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 13
             },
@@ -116,6 +117,7 @@ export default {
               altName: "G#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 15
             },
@@ -132,6 +134,7 @@ export default {
               altName: "A#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 17
             },
@@ -157,6 +160,7 @@ export default {
               altName: "C#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 110
             },
@@ -173,6 +177,7 @@ export default {
               altName: "D#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 112
             },
@@ -197,6 +202,7 @@ export default {
               altName: "G#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 115
             },
@@ -236,6 +242,7 @@ export default {
               altName: "C#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 23
             },
@@ -252,6 +259,7 @@ export default {
               altName: "D#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 25
             },
@@ -276,6 +284,7 @@ export default {
               altName: "F#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 28
             },
@@ -292,6 +301,7 @@ export default {
               altName: "G#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 210
             },
@@ -308,6 +318,7 @@ export default {
               altName: "A#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 212
             },
@@ -333,6 +344,7 @@ export default {
               altName: "C#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 215
             },
@@ -363,6 +375,7 @@ export default {
               altName: "G#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 32
             },
@@ -379,6 +392,7 @@ export default {
               altName: "A#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 34
             },
@@ -404,6 +418,7 @@ export default {
               altName: "C#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 37
             },
@@ -420,6 +435,7 @@ export default {
               altName: "D#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 39
             },
@@ -444,6 +460,7 @@ export default {
               altName: "F#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 312
             },
@@ -460,6 +477,7 @@ export default {
               altName: "G#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 314
             },
@@ -476,6 +494,7 @@ export default {
               altName: "A#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 316
             }
@@ -498,6 +517,7 @@ export default {
               altName: "D#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 42
             },
@@ -522,6 +542,7 @@ export default {
               altName: "F#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 45
             },
@@ -538,6 +559,7 @@ export default {
               altName: "G#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 47
             },
@@ -554,6 +576,7 @@ export default {
               altName: "A#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 49
             },
@@ -579,6 +602,7 @@ export default {
               altName: "C#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 412
             },
@@ -595,6 +619,7 @@ export default {
               altName: "D#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 414
             },
@@ -633,6 +658,7 @@ export default {
               altName: "A#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 52
             },
@@ -658,6 +684,7 @@ export default {
               altName: "C#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 55
             },
@@ -674,6 +701,7 @@ export default {
               altName: "D#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 57
             },
@@ -698,6 +726,7 @@ export default {
               altName: "F#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 510
             },
@@ -714,6 +743,7 @@ export default {
               altName: "G#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 512
             },
@@ -730,6 +760,7 @@ export default {
               altName: "A#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 514
             },
@@ -776,6 +807,7 @@ export default {
               altName: "F#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 63
             },
@@ -792,6 +824,7 @@ export default {
               altName: "G#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 65
             },
@@ -808,6 +841,7 @@ export default {
               altName: "A#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 67
             },
@@ -832,6 +866,7 @@ export default {
               altName: "C#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 610
             },
@@ -848,6 +883,7 @@ export default {
               altName: "D#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 612
             },
@@ -872,6 +908,7 @@ export default {
               altName: "F#",
               isRoot: 0,
               isThird: 0,
+              isFifth: 0,
               isHighlighted: 0,
               id: 615
             },
