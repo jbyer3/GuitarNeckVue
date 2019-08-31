@@ -35,7 +35,7 @@
   <div class="chord-inputs">
     <select v-model="selected1">
       <option
-        v-for="note in circleOfFifths"
+        v-for="note in circleOFifths"
         :value="note.value"
         :key="note.id"
         @click="hilite(finalChord)"
@@ -84,7 +84,7 @@ export default {
               name: "E",
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 11 
             },
@@ -92,7 +92,7 @@ export default {
               name: "F", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 12 
               },
@@ -108,7 +108,7 @@ export default {
               name: "G", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 14 },
             {
@@ -123,7 +123,7 @@ export default {
               name: "A", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 16 
             },
@@ -140,7 +140,7 @@ export default {
               altname: "Cb", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 18 
             },
@@ -148,7 +148,7 @@ export default {
               name: "C", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 19 
             },
@@ -164,7 +164,7 @@ export default {
               name: "D", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 111 
             },
@@ -180,7 +180,7 @@ export default {
               name: "E", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 113
               },
@@ -188,7 +188,7 @@ export default {
               name: "F", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 114
               },
@@ -204,7 +204,7 @@ export default {
               name: "G", 
               isRoot: 0, 
               isThird: 0, 
-              isFfifth: 0, 
+              isFifth: 0, 
               isHighlighted: 0, 
               id: 116 
             }
@@ -214,8 +214,23 @@ export default {
           stringName: "stringTwo",
           stringId: 2,
           notes: [
-            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 21 },
-            { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 22 },
+            { 
+              name: "B", 
+              altName: "Cb", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 21
+            },
+            { 
+              name: "C", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 22 
+            },
             {
               name: "Db",
               altName: "C#",
@@ -224,7 +239,14 @@ export default {
               isHighlighted: 0,
               id: 23
             },
-            { name: "D", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 24 },
+            { 
+              name: "D", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 24 
+            },
             {
               name: "Eb",
               altName: "D#",
@@ -233,8 +255,22 @@ export default {
               isHighlighted: 0,
               id: 25
             },
-            { name: "E", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 26 },
-            { name: "F", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 27 },
+            { 
+              name: "E", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 26 
+            },
+            { 
+              name: "F", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 27 
+            },
             {
               name: "Gb",
               altName: "F#",
@@ -243,7 +279,14 @@ export default {
               isHighlighted: 0,
               id: 28
             },
-            { name: "G", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 29 },
+            { 
+              name: "G", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 29 
+            },
             {
               name: "Ab",
               altName: "G#",
@@ -252,7 +295,14 @@ export default {
               isHighlighted: 0,
               id: 210
             },
-            { name: "A", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 211 },
+            { 
+              name: "A", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 211
+            },
             {
               name: "Bb",
               altName: "A#",
@@ -261,8 +311,23 @@ export default {
               isHighlighted: 0,
               id: 212
             },
-            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 213 },
-            { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 214 },
+            { 
+              name: "B", 
+              altName: "Cb", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 213 
+            },
+            { 
+              name: "C", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 214 
+            },
             {
               name: "Db",
               altName: "C#",
@@ -271,14 +336,28 @@ export default {
               isHighlighted: 0,
               id: 215
             },
-            { name: "D", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 216 }
+            { 
+              name: "D", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 216 
+            }
           ]
         },
         {
           stringName: "stringThree",
           stringId: 3,
           notes: [
-            { name: "G", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 31 },
+            { 
+              name: "G", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 31 
+            },
             {
               name: "Ab",
               altName: "G#",
@@ -287,7 +366,14 @@ export default {
               isHighlighted: 0,
               id: 32
             },
-            { name: "A", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 33 },
+            { 
+              name: "A", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 33 
+            },
             {
               name: "Bb",
               altName: "A#",
@@ -296,8 +382,23 @@ export default {
               isHighlighted: 0,
               id: 34
             },
-            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 35 },
-            { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 36 },
+            { 
+              name: "B", 
+              altName: "Cb", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 35 
+            },
+            { 
+              name: "C", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 36 
+            },
             {
               name: "Db",
               altName: "C#",
@@ -306,7 +407,14 @@ export default {
               isHighlighted: 0,
               id: 37
             },
-            { name: "D", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 38 },
+            { 
+              name: "D", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 38 
+            },
             {
               name: "Eb",
               altName: "D#",
@@ -315,8 +423,22 @@ export default {
               isHighlighted: 0,
               id: 39
             },
-            { name: "E", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 310 },
-            { name: "F", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 311 },
+            { 
+              name: "E", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 310 
+            },
+            { 
+              name: "F", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 311 
+            },
             {
               name: "Gb",
               altName: "F#",
@@ -325,7 +447,14 @@ export default {
               isHighlighted: 0,
               id: 312
             },
-            { name: "G", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 313 },
+            { 
+              name: "G", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 313 
+            },
             {
               name: "Ab",
               altName: "G#",
@@ -334,7 +463,14 @@ export default {
               isHighlighted: 0,
               id: 314
             },
-            { name: "A", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 315 },
+            { 
+              name: "A", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 315 
+            },
             {
               name: "Bb",
               altName: "A#",
@@ -349,7 +485,14 @@ export default {
           stringName: "stringFour",
           stringId: 4,
           notes: [
-            { name: "D", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 41 },
+            { 
+              name: "D", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 41 
+            },
             {
               name: "Eb",
               altName: "D#",
@@ -358,8 +501,22 @@ export default {
               isHighlighted: 0,
               id: 42
             },
-            { name: "E", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 43 },
-            { name: "F", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 44 },
+            { 
+              name: "E", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 43 
+            },
+            { 
+              name: "F", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 44 
+            },
             {
               name: "Gb",
               altName: "F#",
@@ -368,7 +525,14 @@ export default {
               isHighlighted: 0,
               id: 45
             },
-            { name: "G", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 46 },
+            { 
+              name: "G", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 46 
+            },
             {
               name: "Ab",
               altName: "G#",
@@ -377,7 +541,14 @@ export default {
               isHighlighted: 0,
               id: 47
             },
-            { name: "A", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 48 },
+            { 
+              name: "A", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 48 
+            },
             {
               name: "Bb",
               altName: "A#",
@@ -386,8 +557,23 @@ export default {
               isHighlighted: 0,
               id: 49
             },
-            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 410 },
-            { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 411 },
+            { 
+              name: "B", 
+              altName: "Cb", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 410 
+            },
+            { 
+              name: "C", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 411 
+            },
             {
               name: "Db",
               altName: "C#",
@@ -396,7 +582,14 @@ export default {
               isHighlighted: 0,
               id: 412
             },
-            { name: "D", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 413 },
+            { 
+              name: "D", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 413 
+            },
             {
               name: "Eb",
               altName: "D#",
@@ -405,15 +598,36 @@ export default {
               isHighlighted: 0,
               id: 414
             },
-            { name: "E", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 415 },
-            { name: "F", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 416 }
+            { 
+              name: "E", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 415 
+            },
+            { 
+              name: "F", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 416 
+            }
           ]
         },
         {
           stringName: "stringFive",
           stringId: 5,
           notes: [
-            { name: "A", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 51 },
+            { 
+              name: "A", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 51 
+            },
             {
               name: "Bb",
               altName: "A#",
@@ -422,8 +636,23 @@ export default {
               isHighlighted: 0,
               id: 52
             },
-            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 53 },
-            { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 54 },
+            { 
+              name: "B", 
+              altName: "Cb", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 53 
+            },
+            { 
+              name: "C", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 54 
+            },
             {
               name: "Db",
               altName: "C#",
@@ -432,7 +661,14 @@ export default {
               isHighlighted: 0,
               id: 55
             },
-            { name: "D", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 56 },
+            { 
+              name: "D", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 56 
+            },
             {
               name: "Eb",
               altName: "D#",
@@ -441,8 +677,22 @@ export default {
               isHighlighted: 0,
               id: 57
             },
-            { name: "E", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 58 },
-            { name: "F", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 59 },
+            { 
+              name: "E", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 58 
+            },
+            { 
+              name: "F", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 59 
+            },
             {
               name: "Gb",
               altName: "F#",
@@ -451,7 +701,14 @@ export default {
               isHighlighted: 0,
               id: 510
             },
-            { name: "G", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 511 },
+            { 
+              name: "G", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 511 
+            },
             {
               name: "Ab",
               altName: "G#",
@@ -460,7 +717,14 @@ export default {
               isHighlighted: 0,
               id: 512
             },
-            { name: "A", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 513 },
+            { 
+              name: "A", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 513 
+            },
             {
               name: "Bb",
               altName: "A#",
@@ -469,16 +733,44 @@ export default {
               isHighlighted: 0,
               id: 514
             },
-            { name: "B", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 515 },
-            { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 516 }
+            { 
+              name: "B", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 515 
+            },
+            { 
+              name: "C", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 516 
+            }
           ]
         },
         {
           stringName: "stringSix",
           stringId: 6,
           notes: [
-            { name: "E", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 61 },
-            { name: "F", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 62 },
+            { 
+              name: "E", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 61 
+            },
+            { 
+              name: "F", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 62 
+            },
             {
               name: "Gb",
               altName: "F#",
@@ -487,7 +779,14 @@ export default {
               isHighlighted: 0,
               id: 63
             },
-            { name: "G", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 64 },
+            { 
+              name: "G", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 64 
+            },
             {
               name: "Ab",
               altName: "G#",
@@ -496,7 +795,14 @@ export default {
               isHighlighted: 0,
               id: 65
             },
-            { name: "A", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 66 },
+            { 
+              name: "A", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 66 
+            },
             {
               name: "Bb",
               altName: "A#",
@@ -505,8 +811,22 @@ export default {
               isHighlighted: 0,
               id: 67
             },
-            { name: "B", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 68 },
-            { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 69 },
+            { 
+              name: "B", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 68 
+            },
+            { 
+              name: "C", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 69 
+            },
             {
               name: "Db",
               altName: "C#",
@@ -515,7 +835,14 @@ export default {
               isHighlighted: 0,
               id: 610
             },
-            { name: "D", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 611 },
+            { 
+              name: "D", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 611 
+            },
             {
               name: "Eb",
               altName: "D#",
@@ -524,8 +851,22 @@ export default {
               isHighlighted: 0,
               id: 612
             },
-            { name: "E", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 613 },
-            { name: "F", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 614 },
+            { 
+              name: "E", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 613 
+            },
+            { 
+              name: "F", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 614 
+            },
             {
               name: "Gb",
               altName: "F#",
@@ -534,13 +875,20 @@ export default {
               isHighlighted: 0,
               id: 615
             },
-            { name: "G", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 616 }
+            { 
+              name: "G", 
+              isRoot: 0, 
+              isThird: 0, 
+              isFifth: 0, 
+              isHighlighted: 0, 
+              id: 616 
+            }
           ]
         }
       ],
       selected1: "",
       selected2: "",
-      circleOfFifths: [
+      circleOFifths: [
         { text: "C", value: "C", id: 1 },
         { text: "G", value: "G", id: 2 },
         { text: "D", value: "D", id: 3 },
