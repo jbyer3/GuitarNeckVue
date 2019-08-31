@@ -8,7 +8,7 @@
         v-for="note in string.notes"
         :key="note.id"
         @click="highlight(note)"
-        :class="{selected: note.isHighlighted, rootInterval: note.isRoot, thirdInterval: note.isThird}"
+        :class="{selected: note.isHighlighted, rootInterval: note.isRoot, thirdInterval: note.isThird, fifthInterval: note.isFifth}"
         class="fret"
       >{{note.name}}</div>
     </div>
@@ -136,7 +136,8 @@ export default {
               id: 17
             },
             { 
-              name: "B", 
+              name: "B",
+              altname: "Cb", 
               isRoot: 0, 
               isThird: 0, 
               isFfifth: 0, 
@@ -213,7 +214,7 @@ export default {
           stringName: "stringTwo",
           stringId: 2,
           notes: [
-            { name: "B", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 21 },
+            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 21 },
             { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 22 },
             {
               name: "Db",
@@ -260,7 +261,7 @@ export default {
               isHighlighted: 0,
               id: 212
             },
-            { name: "B", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 213 },
+            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 213 },
             { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 214 },
             {
               name: "Db",
@@ -295,7 +296,7 @@ export default {
               isHighlighted: 0,
               id: 34
             },
-            { name: "B", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 35 },
+            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 35 },
             { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 36 },
             {
               name: "Db",
@@ -385,7 +386,7 @@ export default {
               isHighlighted: 0,
               id: 49
             },
-            { name: "B", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 410 },
+            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 410 },
             { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 411 },
             {
               name: "Db",
@@ -421,7 +422,7 @@ export default {
               isHighlighted: 0,
               id: 52
             },
-            { name: "B", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 53 },
+            { name: "B", altName: "Cb", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 53 },
             { name: "C", isRoot: 0, isThird: 0, isFfifth: 0, isHighlighted: 0, id: 54 },
             {
               name: "Db",
@@ -578,10 +579,15 @@ export default {
           } else {
             note.isRoot = 0;
           }
-          if (notes[3] === note.name || notes[3] === note.altName) {
+          if (notes[1] === note.name || notes[1] === note.altName) {
             note.isThird = 1;
           } else {
             note.isThird = 0;
+          }
+          if (notes[2] === note.name || notes[2] === note.altName) {
+            note.isFifth = 1;
+          } else {
+            note.isFifth = 0;
           }
         });
       });
@@ -717,5 +723,9 @@ h1 {
 
 .thirdInterval {
   background: goldenrod;
+}
+
+.fifthInterval {
+  background: cornflowerblue;
 }
 </style>
